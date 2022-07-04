@@ -21,13 +21,13 @@ FLAGS	=	-Wall -Wextra -Werror
 all		:	${NAME}
 
 ${NAME} :	${OBJS} ${HEADER}
-	ar rc $(NAME) ${OBJS}
+	ar rcs $(NAME) ${OBJS}
 
 %.o		:	%.c ${HEADER}
 	gcc ${FLAGS} -c $< -o $@
 
 bonus	:	${OBJS_B}
-	ar rc $(NAME) ${OBJS_B}
+	ar rcs $(NAME) ${OBJS_B}
 
 clean	:
 	@rm -f ${OBJS} ${OBJS_B}
